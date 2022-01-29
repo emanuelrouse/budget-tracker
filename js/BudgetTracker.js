@@ -46,7 +46,29 @@ export default class BudgetTracker {
     }
 
     static entryHtml() {
+        return `
+        <tr>
+            <td>
+                <input class="input input-date type="date">
+            </td>
+            <td>
+                <input class="input input-description type="text" placeholder="Add a Description">
+            </td>
 
+            <td>
+                <select class="input input-type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </td>
+            <td>
+                <input class="input input-amount type="number" placeholder="Add a Description">
+            </td>
+            <td>
+                <button type="button" class="delete-entry">&#10005;</button>
+            </td>
+        </tr>
+        `;
     }
 
     load() {
