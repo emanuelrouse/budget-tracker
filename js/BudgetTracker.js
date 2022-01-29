@@ -72,7 +72,15 @@ export default class BudgetTracker {
     }
 
     load() {
+        // on load read the data and display it in the table
+        const entries = JSON.parse(localStorage.getItem("budget-tracker-entries-div") || "[]");
+        // double quotes can create a json data type e.g "[]"
 
+        // loop through objects in the entries
+        for (const entry of entries) {
+            this.addEntry(entry);
+        }
+        console.log(entries);
     }
 
     updateSummary() {
